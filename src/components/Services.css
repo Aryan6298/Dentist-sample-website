@@ -1,26 +1,30 @@
+/* ===============================
+   SERVICES SECTION
+================================*/
+
 .services {
   padding: 80px 20px;
-  background: #f8fafc;
 }
 
-.services-header {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
-}
-
+/* Header */
 .services-header h2 {
   font-size: 36px;
-  color: #0f172a;
+  color: #ffffff;
   margin-bottom: 15px;
+  margin-left: 100px;
 }
 
 .services-header p {
-  color: #475569;
+  color: #ffffff;
   font-size: 16px;
+  margin-left: 100px;
 }
 
-/* Highlight Section */
+
+/* ===============================
+   HIGHLIGHT SECTION
+================================*/
+
 .service-highlight {
   max-width: 1200px;
   margin: 60px auto;
@@ -30,14 +34,15 @@
   align-items: center;
 }
 
+/* Text */
 .service-text h3 {
   font-size: 28px;
-  color: #0f172a;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
 .service-text p {
-  color: #475569;
+  color: #ffffff;
   line-height: 1.7;
   margin-bottom: 15px;
 }
@@ -51,20 +56,37 @@
 .service-text ul li {
   margin-bottom: 8px;
   font-size: 15px;
+  color: #ffffff;
 }
 
 .service-note {
   font-weight: 500;
-  color: #0284c7;
+  color: #ffffff;
 }
 
-.service-image img {
-  width: 100%;
-  max-width: 450px;
+
+/* Main Image (smaller + clean) */
+.servise img {
+  width: 520px;
+  height: 270px;
+  object-fit: cover;
   border-radius: 16px;
+  display: block;
+  margin: auto;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
-/* Other Services */
+.servise img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===============================
+   OTHER SERVICE CARDS
+================================*/
+
 .other-services {
   max-width: 1200px;
   margin: auto;
@@ -74,7 +96,7 @@
 .other-services h3 {
   font-size: 28px;
   margin-bottom: 30px;
-  color: #0f172a;
+  color: #ffffff;
 }
 
 .service-cards {
@@ -84,10 +106,13 @@
 }
 
 .service-card {
-  background: #ffffff;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.06);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease;
 }
 
@@ -96,23 +121,162 @@
 }
 
 .service-card h4 {
-  color: #0284c7;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .service-card p {
   font-size: 14px;
-  color: #475569;
+  color: #ffffff;
 }
+
+
+/* ===============================
+   SLIDER SECTION
+================================*/
+
+.slider-title {
+  text-align: center;
+  margin: 100px 0 30px;
+  color: #ffffff;
+}
+
+/* Wrapper - Full Screen */
+.slider-wrapper {
+  position: relative;
+  width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: -0.1vw;
+  overflow: hidden;
+  height: 600px; /* Adjust height as needed for full-screen feel */
+  display: flex;
+  align-items: center;
+}
+
+/* Track */
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+/* Card */
+.slide-card {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Slider Image */
+.slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.slide-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.slide-card p {
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #dddddd;
+}
+
+
+/* Buttons */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.slide-btn:hover {
+  background: #0077ff;
+}
+
+
+/* ===============================
+   GLOBAL SECTION FIX
+================================*/
+
 section {
   position: relative;
   z-index: 1;
 }
 
-/* Card-style sections */
 .card-section {
-  background: #ffffff;
   border-radius: 24px;
   padding: 60px 30px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================*/
+
+@media(max-width:768px){
+
+  .servise img {
+    width: 220px;
+    height: 160px;
+  }
+
+  .slider-wrapper {
+    height: 300px;
+  }
+
+  .slide-card h4 {
+    font-size: 1.5rem;
+  }
+
+  .slide-card p {
+    font-size: 1rem;
+  }
+
+  .slide-card {
+    padding: 25px;
+  }
 }

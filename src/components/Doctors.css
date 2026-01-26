@@ -1,137 +1,268 @@
-.doctors {
-  padding: 80px 20px;
-  background: #ffffff;
+/* Doctors.css */
+
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Main Section */
+.doctors {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #424445 0%, );
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Header */
 .doctors-header {
   text-align: center;
-  max-width: 800px;
-  margin: auto;
+  margin-bottom: 50px;
 }
 
 .doctors-header h2 {
-  font-size: 36px;
-  color: #0f172a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1565c0;
   margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .doctors-header p {
-  color: #475569;
+  font-size: 1.2rem;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Main Doctor */
+/* Main Doctor Section */
 .main-doctor {
-  max-width: 1200px;
-  margin: 60px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  display: flex;
   align-items: center;
+  margin-bottom: 50px;
+  background: rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-doctor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 70px rgba(255, 255, 255, 0.15);
+}
+
+.doctor-image {
+  flex: 1;
+  text-align: center;
+  margin-right: 30px;
 }
 
 .doctor-image img {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #e3f2fd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.doctor-image img:hover {
+  transform: scale(1.05);
+}
+
+.double-img {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.double-img img {
+  width: 200px;
+  height: 20 0px;
+}
+
+.doctor-info {
+  flex: 2;
 }
 
 .doctor-info h3 {
-  font-size: 28px;
-  color: #0f172a;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 10px;
 }
 
 .doctor-role {
-  color: #0284c7;
-  font-weight: 600;
-  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 
 .doctor-qualifications {
   list-style: none;
-  padding: 0;
-  margin: 15px 0;
+  margin-bottom: 20px;
 }
 
 .doctor-qualifications li {
+  font-size: 1rem;
   margin-bottom: 8px;
+  padding-left: 25px;
+  position: relative;
+  color: #ffffff;
+}
+
+.doctor-qualifications li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: #55ee58;
+  border-radius: 50%;
 }
 
 .doctor-description {
-  color: #475569;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d9d9d9;
 }
 
 /* Team Section */
 .team-section {
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
 .team-section h3 {
-  font-size: 28px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1565c0;
+  text-align: center;
   margin-bottom: 30px;
-  color: #0f172a;
+  text-shadow: 0 2px 4px rgba(209, 209, 209, 0.1);
 }
 
 .team-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .team-card {
-  background: #f8fafc;
+  background: white;
+  border-radius: 10px;
   padding: 20px;
-  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-card img {
-  width: 100%;
-  max-width: 180px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .team-card h4 {
-  margin-bottom: 5px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 10px;
 }
 
 .team-card p {
-  font-size: 14px;
-  color: #475569;
+  font-size: 1rem;
+  color: #666;
 }
 
 /* Trust Section */
 .trust-section {
-  margin-top: 80px;
-  background: #f1f5f9;
-  padding: 40px 20px;
-  text-align: center;
+  background: transparent; 
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .trust-section h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1565c0;
+  text-align: center;
   margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .trust-section ul {
   list-style: none;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
-.trust-section ul li {
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-section {
+.trust-section li {
+  font-size: 1.1rem;
+  color: #ffffff;
+  padding-left: 30px;
   position: relative;
-  z-index: 1;
+  line-height: 1.5;
 }
 
-/* Card-style sections */
-.card-section {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 60px 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+.trust-section li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .doctors {
+    padding: 40px 15px;
+  }
+
+  .doctors-header h2 {
+    font-size: 2rem;
+  }
+
+  .main-doctor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .double-img {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-section ul {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
-import RealCeramicTooth from "./RealCeramicTooth";
+import RealCeramicTooth from "./CeramicTooth";
 
 export default function ThreeBackground() {
   return (

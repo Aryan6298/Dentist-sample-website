@@ -1,7 +1,8 @@
 .about-section {
   width: 100%;
-  padding: 100px 0;
-  background: linear-gradient(135deg, #f2fbff, #ffffff);
+  height:1000px ;
+  padding: 10px 0;
+  
 }
 
 .about-container {
@@ -17,7 +18,7 @@
 .about-image img {
   width: 480px;
   border-radius: 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
   transition: 0.4s ease;
 }
 
@@ -33,14 +34,14 @@
 .about-title {
   font-size: 45px;
   font-weight: 800;
-  color: #0b6bbf;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 .about-desc {
   font-size: 18px;
   line-height: 1.7;
-  color: #444;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -53,13 +54,14 @@
 }
 
 .highlight-box {
-  background: #e8f5ff;
+  
   padding: 20px 25px;
   border-radius: 15px;
   width: 270px;
   text-align: center;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: 0.3s;
+  margin: 25px;
 }
 
 .highlight-box:hover {
@@ -69,12 +71,12 @@
 .highlight-box h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #076aad;
+  color: #9ac9a5;
 }
 
 .highlight-box p {
   font-size: 15px;
-  color: #555;
+  color: #ffffff;
 }
 
 /* Points */
@@ -83,7 +85,7 @@
   font-size: 18px;
   margin-bottom: 12px;
   line-height: 1.5;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Button */

@@ -4,21 +4,30 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
   background-image: url("./assets/images/backgoundImage.jpg");
-  background-size: cover;        /* makes image full size */
-  background-position: center;   /* keeps it centered */
-  background-repeat: no-repeat;  /* no repeating */
-  background-attachment: fixed;  /* 🔥 smooth scrolling effect */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
+}
+/* UNIVERSAL IMAGE HOVER EFFECT */
+img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
 
 .hero {
   height: 100vh;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +38,6 @@ body {
 
 .hero-text {
   max-width: 500px;
-  animation: slideIn 1.2s ease-out;
 }
 
 .hero-text h1 {
@@ -45,37 +53,37 @@ body {
   font-size: 16px;
 }
 
+
 .hero-img img {
   width: 420px;
-  animation: float 3s ease-in-out infinite;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  margin-right: -50px;
 }
 
+@media (max-width: 768px) {
+  .hero-img img {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+  }
+}
+
+/* Tooth icons without animation */
 .tooth {
   position: absolute;
   font-size: 40px;
   opacity: 0.15;
-  animation: moveUp 10s linear infinite;
 }
 
 .tooth:nth-child(1) { left: 10%; }
-.tooth:nth-child(2) { left: 30%; animation-delay: 2s; }
-.tooth:nth-child(3) { left: 60%; animation-delay: 4s; }
-.tooth:nth-child(4) { left: 80%; animation-delay: 1s; }
+.tooth:nth-child(2) { left: 30%; }
+.tooth:nth-child(3) { left: 60%; }
+.tooth:nth-child(4) { left: 80%; }
 
-@keyframes slideIn {
-  from { transform: translateX(-80px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes moveUp {
-  from { bottom: -100px; }
-  to { bottom: 110%; }
-}
 .hero {
   position: relative;
   min-height: 100vh;
@@ -89,14 +97,14 @@ body {
   z-index: 2;
 }
 
-/* 3D canvas should stay behind */
+/* Canvas always behind */
 canvas {
   position: absolute !important;
   inset: 0;
   z-index: 1;
 }
 
-/* GLOBAL BACKGROUND */
+/* Global background */
 .global-bg {
   position: fixed;
   inset: 0;
@@ -104,115 +112,116 @@ canvas {
   pointer-events: none;
 }
 
-/* Canvas always behind */
 .global-bg canvas {
   width: 100% !important;
   height: 100% !important;
 }
 
-/* CONTENT ABOVE BACKGROUND */
 .App > *:not(.global-bg) {
   position: relative;
   z-index: 2;
 }
 
-/* Page sections transparent */
+/* Remove section animations */
 section,
 footer,
 nav {
   background: transparent;
-}
-/* =========================
-   GLOBAL PAGE ANIMATION
-========================= */
-body {
-  animation: pageFade 1s ease-in-out;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
-@keyframes pageFade {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   SECTION REVEAL ANIMATION
-========================= */
-section {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: sectionReveal 1s ease forwards;
-}
-
-section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.4s; }
-section:nth-of-type(3) { animation-delay: 0.6s; }
-section:nth-of-type(4) { animation-delay: 0.8s; }
-
-@keyframes sectionReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   BUTTON HOVER (CLINIC STYLE)
-========================= */
+/* Remove button hover animations (keep basic style only) */
 button {
-  transition: all 0.3s ease;
+  transition: none;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(0, 150, 255, 0.25);
-}
-
-/* =========================
-   CARD ANIMATION (SERVICES / DOCTORS)
-========================= */
+/* Remove card hover animation */
 .card {
-  transition: all 0.4s ease;
+  transition: none;
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+/* FLOWER CIRCLE GROUP — no animations */
+.flower-circle-group {
+  position: absolute;
+  inset: 0;
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  pointer-events: none;
 }
 
-/* =========================
-   FLOATING EFFECT
-========================= */
-.float {
-  animation: float 5s ease-in-out infinite;
+.flower-circle-group .circle {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.12);
+  background: #fff;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+.flower-circle-group .circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* =========================
-   TOOTH GLOW EFFECT
-========================= */
-.tooth {
-  animation: toothGlow 3s ease-in-out infinite;
+.flower-circle-group .center {
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 130px;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes toothGlow {
-  0% {
-    filter: drop-shadow(0 0 0px rgba(0, 150, 255, 0.2));
+.flower-circle-group .top {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 420px;
+  margin-top: -180px;
+}
+
+.flower-circle-group .bottom {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 300px;
+  margin-left: 250px;
+}
+
+.flower-circle-group .left {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -10px;
+  margin-left: 300px;
+}
+
+.flower-circle-group .right {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 200px;
+  margin-right: -150px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .flower-circle-group {
+    width: 220px;
+    height: 220px;
   }
-  50% {
-    filter: drop-shadow(0 0 15px rgba(0, 150, 255, 0.6));
+
+  .flower-circle-group .circle {
+    width: 70px;
+    height: 70px;
   }
-  100% {
-    filter: drop-shadow(0 0 0px rgba(0, 150, 255, 0.2));
+
+  .flower-circle-group .center {
+    width: 90px;
+    height: 90px;
   }
 }

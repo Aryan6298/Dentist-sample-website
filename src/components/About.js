@@ -9,8 +9,11 @@ const About = () => {
 
         {/* Left Side Image */}
         <div className="about-image">
-          <img src={aboutImg} alt="Dental Clinic" />
-        </div>
+    <img src={aboutImg} alt="Dental Clinic" />
+
+    
+</div>
+
 
         {/* Right Side Content */}
         <div className="about-text">
@@ -50,14 +53,14 @@ const About = () => {
 
           {/* Points List */}
           <ul className="about-points">
-            <li>✔ Personalized treatment plans for every patient</li>
-            <li>✔ 3D scanning & premium ceramic material</li>
-            <li>✔ Dental experts with years of certified experience</li>
-            <li>✔ Hygienic, safe, and advanced clinic environment</li>
-            <li>✔ Affordable and transparent pricing</li>
+            <li> Personalized treatment plans for every patient</li>
+            <li> 3D scanning & premium ceramic material</li>
+            <li> Dental experts with years of certified experience</li>
+            <li> Hygienic, safe, and advanced clinic environment</li>
+            <li> Affordable and transparent pricing</li>
           </ul>
 
-          <button className="about-btn">Book Your Appointment</button>
+          
         </div>
 
       </div>

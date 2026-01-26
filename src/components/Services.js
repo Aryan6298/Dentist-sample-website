@@ -1,11 +1,47 @@
+import React, { useState, useEffect } from "react";
 import "./Services.css";
-import Servicesimg from "../assets/images/services.jpg";
+
+import Servicesimg from "../assets/images/servise.jpeg";
+
+/* slider images (put your images inside assets/images) */
+import s1 from "../assets/images/servise1.avif";
+import s2 from "../assets/images/servise2.jpg";
+import s3 from "../assets/images/servise3.jpg";
+import s4 from "../assets/images/servise4.jpg";
 
 function Services() {
+  /* =====================
+     SLIDER LOGIC
+  ===================== */
+  const servicesData = [
+    { title: "Ceramic Caps", desc: "Natural looking & long lasting ceramic caps.", img: s1 },
+    { title: "Teeth Whitening", desc: "Bright white smile treatment.", img: s2 },
+    { title: "Root Canal", desc: "Pain-free advanced RCT treatment.", img: s3 },
+    { title: "Braces", desc: "Perfect teeth alignment solutions.", img: s4 }
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % servicesData.length);
+    }, 3000); // Change slide every 3 seconds
+    return () => clearInterval(interval);
+  }, [servicesData.length]);
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % servicesData.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + servicesData.length) % servicesData.length);
+  };
+
   return (
     <section className="services" id="services">
 
-      {/* Header */}
+      {/* ================= HEADER ================= */}
       <div className="services-header">
         <h2>Our Dental Services</h2>
         <p>
@@ -14,15 +50,13 @@ function Services() {
         </p>
       </div>
 
-      {/* Main Service – Ceramic Caps */}
+      {/* ================= MAIN SERVICE ================= */}
       <div className="service-highlight">
         <div className="service-text">
           <h3>Ceramic Caps for Teeth Adjustment</h3>
           <p>
-            Ceramic caps (ceramic crowns) are the best solution for correcting
-            misaligned, damaged, discolored, or uneven teeth. At Muskaan Dental
-            Clinic, we focus on precise tooth adjustment to give you a natural,
-            confident smile.
+            Ceramic caps are the best solution for correcting misaligned,
+            damaged, discolored or uneven teeth for a confident smile.
           </p>
 
           <ul>
@@ -31,51 +65,60 @@ function Services() {
             <li>🦷 Long-lasting & stain-resistant</li>
             <li>🦷 Comfortable and painless procedure</li>
           </ul>
-
-          <p className="service-note">
-            Our ceramic caps are custom-made to match your natural teeth color
-            and structure, ensuring flawless results.
-          </p>
         </div>
 
-        <div className="service-image">
-          <img src={Servicesimg} alt="Dental Clinic" />  
+        <div className="servise">
+          <img src={Servicesimg} alt="Dental Clinic" />
         </div>
       </div>
 
-      {/* Other Services */}
+      {/* ================= SLIDER SECTION ================= */}
+      <h3 className="slider-title">More Treatments</h3>
+
+      <div className="slider-wrapper">
+
+        <button className="slide-btn left" onClick={prevSlide}>❮</button>
+
+        <div
+          className="slider-track"
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {servicesData.map((item, i) => (
+            <div className="slide-card" key={i}>
+              <img src={item.img} alt={item.title} />
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <button className="slide-btn right" onClick={nextSlide}>❯</button>
+
+      </div>
+
+      {/* ================= OTHER SERVICES ================= */}
       <div className="other-services">
         <h3>Other Treatments We Offer</h3>
 
         <div className="service-cards">
           <div className="service-card">
-            <h4>Teeth Cleaning & Polishing</h4>
-            <p>
-              Professional cleaning to remove plaque, tartar, and stains for
-              healthier gums.
-            </p>
+            <h4>Teeth Cleaning</h4>
+            <p>Remove plaque & stains professionally.</p>
           </div>
 
           <div className="service-card">
             <h4>Tooth Filling</h4>
-            <p>
-              High-quality fillings to restore damaged or decayed teeth safely.
-            </p>
+            <p>Restore damaged or decayed teeth safely.</p>
           </div>
 
           <div className="service-card">
-            <h4>Root Canal Treatment</h4>
-            <p>
-              Pain-free RCT to save infected teeth and eliminate discomfort.
-            </p>
+            <h4>Root Canal</h4>
+            <p>Pain-free infection removal treatment.</p>
           </div>
 
           <div className="service-card">
             <h4>Smile Makeover</h4>
-            <p>
-              Complete smile enhancement using ceramic caps and cosmetic
-              dentistry.
-            </p>
+            <p>Complete cosmetic smile enhancement.</p>
           </div>
         </div>
       </div>

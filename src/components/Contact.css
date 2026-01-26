@@ -1,85 +1,101 @@
+/* CONTACT SECTION */
 .contact {
   padding: 80px 20px;
-  background: #f1f5f9;
   text-align: center;
-}
-
-.contact-header {
-  max-width: 700px;
-  margin: auto;
+  
 }
 
 .contact-header h2 {
-  font-size: 36px;
-  color: #0f172a;
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .contact-header p {
-  color: #475569;
+  color: #cfd6e0;
+  font-size: 18px;
 }
 
-/* Contact Box */
+/* GLASS CARD */
+.card-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* CONTACT BOX */
 .contact-box {
-  max-width: 500px;
+  max-width: 550px;
   margin: 50px auto 0;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  padding: 45px;
+  border-radius: 26px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
+.contact-box:hover {
+  transform: translateY(-4px);
+}
+
+/* HEADINGS */
 .contact-box h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  margin-bottom: 12px;
   color: #0f172a;
 }
 
 .contact-box p {
   color: #475569;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  font-size: 16px;
 }
 
-/* Buttons */
+/* BUTTONS */
 .contact-btn {
   display: block;
   text-decoration: none;
   padding: 14px;
-  border-radius: 12px;
-  font-size: 16px;
+  border-radius: 14px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
-  transition: transform 0.2s ease;
+  transition: 0.25s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
 .contact-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+/* COLORS */
 .contact-btn.call {
   background: #0284c7;
-  color: #ffffff;
+  color: white;
 }
 
 .contact-btn.whatsapp {
   background: #22c55e;
-  color: #ffffff;
+  color: white;
 }
 
+/* NOTE */
 .contact-note {
   font-size: 14px;
   color: #64748b;
-  margin-top: 10px;
-}
-section {
-  position: relative;
-  z-index: 1;
+  margin-top: 15px;
 }
 
-/* Card-style sections */
-.card-section {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 60px 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .contact-header h2 {
+    font-size: 32px;
+  }
+
+  .contact-box {
+    padding: 30px;
+  }
+
+  .contact-btn {
+    font-size: 16px;
+  }
 }
