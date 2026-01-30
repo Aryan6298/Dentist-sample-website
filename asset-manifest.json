@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Aryan6298/Dentist-sample-website.git/static/css/main.e305b21a.css",
+    "main.js": "/Aryan6298/Dentist-sample-website.git/static/js/main.8cd6d9aa.js",
+    "static/js/453.27eba472.chunk.js": "/Aryan6298/Dentist-sample-website.git/static/js/453.27eba472.chunk.js",
+    "static/media/heroImage.webp": "/Aryan6298/Dentist-sample-website.git/static/media/heroImage.69227e9286448f6f0a75.webp",
+    "static/media/servise.jpeg": "/Aryan6298/Dentist-sample-website.git/static/media/servise.3b1118760ec279f5c153.jpeg",
+    "static/media/about.webp": "/Aryan6298/Dentist-sample-website.git/static/media/about.e56c7f0ec02170887f29.webp",
+    "static/media/logo.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/logo.0b0f7ec887e3812a6943.jpg",
+    "static/media/servise3.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/servise3.e74c18ab1832de3b605c.jpg",
+    "static/media/servise4.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/servise4.f02c62f9d77ea8f90c7e.jpg",
+    "static/media/backgoundImage.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/backgoundImage.d3d9245b03c57a294b69.jpg",
+    "static/media/servise2.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/servise2.9cc4e89fe39b534fda8a.jpg",
+    "static/media/docter2.jpeg": "/Aryan6298/Dentist-sample-website.git/static/media/docter2.1a82f559cee6b36777a2.jpeg",
+    "static/media/docter1.jpeg": "/Aryan6298/Dentist-sample-website.git/static/media/docter1.b81a4cc4f7e9d772d6e7.jpeg",
+    "static/media/3.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/3.7fcd8aa76c27c02ac7e6.jpg",
+    "static/media/servise1.avif": "/Aryan6298/Dentist-sample-website.git/static/media/servise1.2d6218c4808ac26c100e.avif",
+    "static/media/4.jpg": "/Aryan6298/Dentist-sample-website.git/static/media/4.58b2394e4a80eba5695c.jpg",
+    "index.html": "/Aryan6298/Dentist-sample-website.git/index.html",
+    "main.e305b21a.css.map": "/Aryan6298/Dentist-sample-website.git/static/css/main.e305b21a.css.map",
+    "main.8cd6d9aa.js.map": "/Aryan6298/Dentist-sample-website.git/static/js/main.8cd6d9aa.js.map",
+    "453.27eba472.chunk.js.map": "/Aryan6298/Dentist-sample-website.git/static/js/453.27eba472.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e305b21a.css",
+    "static/js/main.8cd6d9aa.js"
+  ]
+}
