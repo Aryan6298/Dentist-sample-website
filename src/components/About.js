@@ -4,7 +4,7 @@ import aboutImg from "../assets/images/about.webp";
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-container">
 
         {/* Left Side Image */}

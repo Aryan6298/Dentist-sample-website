@@ -1,203 +1,265 @@
+/* =========================
+   GLOBAL
+========================= */
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* 🔒 prevents ugly horizontal scroll */
+}
+
+/* =========================
+   NAVBAR BASE
+========================= */
+
 .navbar {
   width: 100%;
-  background: #000000;   /* 🔥 BLACK NAVBAR */
+  background: #000000;
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 999999;
   height: 80px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  height: 70px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
 }
 
 .navbar-container {
-max-width: 1200px; 
-height: 130px; 
-margin: 0 auto; 
-display: flex; 
-align-items: center; 
-justify-content: space-between; 
-padding: 12px 24px;
-} 
-.navbar-logo { 
-  display: flex; 
+  max-width: 1200px;
+  height: 130px;
+  margin: 0 auto;
+  display: flex;
   align-items: center;
-  gap: 10px; 
-  top: 0%; 
-  left: 0%;
- } 
- .navbar-logo img { 
-  height: 130px; 
-  margin-left:-100px;
-   border-radius: 34px; /* ✅ Perfect clinic size */ 
-   width: auto; /* Keeps aspect ratio */ 
-   object-fit: contain;
-   } 
-   .navbar-menu { 
-    list-style: none; 
-    display: flex; 
-    gap: 35px; 
-    margin-left: -200px; 
-    height: 70px; 
-  } 
-  .navbar-menu li a { 
-    text-decoration: none; 
-    font-size: 17px; 
-    color: #ffffff; 
-    font-weight: 500; 
-    position: relative; 
-    transition: 0.3s ease;
-   } /* MODERN HOVER LINE EFFECT */ 
-   .navbar-menu li a::after { 
-    content: ""; 
-    position: absolute; 
-    left: 0; 
-    bottom: -4px; 
-    width: 0%; 
-    height: 2px; 
-    background: rgb(210, 150, 60); 
-    transition: 0.3s;
-   } 
-   .navbar-menu li a:hover::after {
-     width: 100%; 
-    } 
-    .navbar-menu li a:hover { 
-      color: rgb(210, 150, 60); } /* BUTTON */ 
-      .navbar-btn { 
-        padding: 10px 20px; 
-        background: #92969a; 
-        color: white; 
-        border: none; 
-        border-radius: 25px; 
-        font-size: 16px; 
-        cursor: pointer; 
-        transition: 0.3s; 
-      } 
-      .navbar-btn:hover {
-        background: rgb(210, 150, 60); 
-      } /* MOBILE */ 
-      @media (max-width: 768px) 
-      {.navbar-menu { display: none; } .logo-text { font-size: 16px; } } 
-      .navbar { 
-        background: rgb(16, 12, 8); 
-        backdrop-filter: blur(12px); 
-        position: sticky; 
-        top: 0; 
-        z-index: 1000; 
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
-      } 
-      .nav-contact {
-         display: flex; 
-         flex-direction: column; /* 👉 Makes numbers vertical */ 
-         gap: 4px; /* space between numbers */ 
-         font-size: 15px; 
-         font-weight: 500; 
-         color: #ffffff; 
-         line-height: 1.2; 
-         margin-right: -300px; 
-         margin-top: -52px; 
-        }
-        .nav-contact {
-  transition: all 0.3s ease;
+  justify-content: space-between;
+  padding: 12px 24px;
+  position: relative;
+  z-index: 999999;
+  overflow: visible;
 }
 
-.nav-contact:hover {
-  transform: translateY(-3px);
+.navbar.scrolled .navbar-container {
+  height: 80px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999999;
+}
+
+.navbar-logo img {
+  height: 130px;
+  margin-left: -100px;
+  border-radius: 34px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled .navbar-logo img {
+  height: 80px;
+}
+
+/* =========================
+   MENU (DESKTOP)
+========================= */
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin-left: -200px;
+  height: 70px;
+  z-index: 999999;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navbar-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: rgb(210, 150, 60);
+  transition: 0.3s;
+}
+
+.navbar-menu li a:hover::after {
+  width: 100%;
+}
+
+.navbar-menu li a:hover {
   color: rgb(210, 150, 60);
-  text-shadow: 0 0 10px rgba(0, 119, 255, 0.6);
 }
 
-        .nav-location a { 
-          display: flex; 
-          align-items: center; 
-          gap: 6px; 
-          color: #ffffff; 
-          text-decoration: none; 
-          font-size: 15px; 
-          font-weight: 500; 
-          transition: 0.3s; 
-          margin-right: -120px; 
-          margin-top: -35px; 
-        } 
-        .nav-location a:hover { 
-          color: rgb(210, 150, 60);
-          
-          transform: translateX(3px); 
-        } 
-        .location-icon { 
-          transition: 0.3s; 
-        } 
-        .nav-location a:hover .location-icon path {
-           
-          fill: rgb(5, 71, 117); 
-        }
-        /* =========================
-   DROPDOWN MENU
+/* =========================
+   CONTACT & LOCATION
+========================= */
+
+.nav-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-right: -300px;
+  margin-top: -52px;
+}
+
+.nav-location a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: -120px;
+  margin-top: -35px;
+}
+
+/* =========================
+   DROPDOWN (DESKTOP)
 ========================= */
 
 .dropdown {
   position: relative;
 }
 
-/* Dropdown Box */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-
   min-width: 220px;
   margin-top: 12px;
   padding: 10px 0;
-
   list-style: none;
   border-radius: 16px;
-
-  background: rgba(0, 0, 0, 0.55); /* 🔥 Transparent */
-  backdrop-filter: blur(14px);     /* Glass effect */
-
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
-
   transition: all 0.3s ease;
-  z-index: 999;
+  z-index: 999999;
 }
 
-/* Show on hover */
 .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-/* Dropdown items */
-.dropdown-menu li a {
-  display: block;
-  padding: 12px 22px;
+/* =========================
+   HAMBURGER
+========================= */
 
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-
-  transition: all 0.3s ease;
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000000;
 }
 
-/* Hover effect */
-.dropdown-menu li a:hover {
-  background: rgba(0, 119, 255, 0.25);
-  color: #00aaff;
-  padding-left: 28px;
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #ffffff;
 }
 
-/* Arrow hover */
-.dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+/* =========================
+   MOBILE SLIDE-IN DRAWER (PRO FIX)
+========================= */
+
+@media (max-width: 1350px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(16px);
+
+    padding: 100px 30px;
+    gap: 25px;
+
+    margin: 0;
+    transition: right 0.4s ease;
+    z-index: 999999;
+  }
+
+  .navbar-menu.open {
+    right: 0;
+  }
+
+  /* 🔥 CRITICAL FIX */
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;           /* ✅ stops layout expansion */
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 15px;
+    display: none;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .nav-contact,
+  .nav-location {
+    display: none;
+  }
 }
 
-.dropdown:hover > a {
-  color: #0077ff;
+/* =========================
+   SMALL DEVICES
+========================= */
+
+@media (max-width: 480px) {
+  .navbar-logo img {
+    height: 60px;
+    margin-left: 0;
+  }
 }

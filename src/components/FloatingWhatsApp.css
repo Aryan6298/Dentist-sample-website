@@ -1,12 +1,13 @@
 /* FloatingWhatsApp.css */
 
+/* Container - FIXED bottom right above all content */
 .floating-whatsapp {
-  position: absolute;
-  z-index: 1000;
-  margin-top: -150px;
-  margin-left: 1300px;
-  cursor: grab; /* Indicates it's draggable */
-  transition: none; /* Remove transition during drag for smooth movement */
+  position: fixed;        /* Fixed to viewport */
+  bottom: 30px;           /* Distance from bottom */
+  right: 30px;            /* Distance from right */
+  z-index: 99999;         /* Above everything */
+  cursor: grab;           /* Indicates it's draggable */
+  transition: none;       /* Remove transition during drag */
 }
 
 .floating-whatsapp.dragging {
@@ -26,24 +27,30 @@
   font-size: 28px;
   cursor: grab;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 20px rgba(37, 211, 102, 0.2);
-  animation: pulse 2s infinite ease-in-out, glow 3s infinite alternate;
+  box-shadow: 
+    0 4px 15px rgba(37, 211, 102, 0.4),
+    0 0 20px rgba(37, 211, 102, 0.2);
+  animation: pulse 2s infinite ease-in-out,
+             glow 3s infinite alternate;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  user-select: none; /* Prevent text selection during drag */
+  user-select: none;      /* Prevent text selection during drag */
 }
 
 .whatsapp-icon:hover {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6), 0 0 30px rgba(37, 211, 102, 0.4);
+  transform: scale(1.15);
+  box-shadow: 
+    0 6px 25px rgba(37, 211, 102, 0.6),
+    0 0 30px rgba(37, 211, 102, 0.4);
   background: linear-gradient(135deg, #128c7e, #25d366, #075e54);
 }
 
 .whatsapp-icon.dragging {
   transform: scale(1.1);
   cursor: grabbing;
-  animation: none; /* Stop animation during drag */
+  animation: none;        /* Stop animation during drag */
 }
 
+/* Animations */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -55,14 +62,18 @@
 
 @keyframes glow {
   0% {
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), 0 0 20px rgba(37, 211, 102, 0.2);
+    box-shadow: 
+      0 4px 15px rgba(37, 211, 102, 0.4),
+      0 0 20px rgba(37, 211, 102, 0.2);
   }
   100% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6), 0 0 25px rgba(37, 211, 102, 0.3);
+    box-shadow: 
+      0 4px 20px rgba(37, 211, 102, 0.6),
+      0 0 25px rgba(37, 211, 102, 0.3);
   }
 }
 
-/* Tooltip - Elegant design with glassmorphism effect */
+/* Tooltip - Elegant glassmorphism */
 .whatsapp-tooltip {
   position: absolute;
   bottom: 75px;
@@ -99,8 +110,13 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Mobile Responsiveness - Smaller and optimized */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+  }
+
   .whatsapp-icon {
     width: 50px;
     height: 50px;
@@ -111,7 +127,7 @@
     font-size: 12px;
     padding: 10px 14px;
     bottom: 65px;
-    right: -10px; /* Slight adjustment for mobile */
+    right: -6px;
   }
 
   .whatsapp-tooltip::after {
@@ -120,6 +136,11 @@
 }
 
 @media (max-width: 480px) {
+  .floating-whatsapp {
+    bottom: 16px;
+    right: 16px;
+  }
+
   .whatsapp-icon {
     width: 45px;
     height: 45px;
